@@ -39,7 +39,16 @@ bool isRoomDark() {
   Serial.println(lightLevel);
 
   // TODO: Fix this logic so it returns true when it's dark
-  return false; // <-- incorrect for now
+  return true; // <-- incorrect for now
+  if (lightLevel > 200) {
+    digitalWrite(ledPin, LOW);
+    Serial.println("LED: OFF");
+  }
+  else {
+    digitalWrite(ledPin, HIGH);
+    Serial.println("LED: ON");
+}
+ 
 }
 
 // ===============================
